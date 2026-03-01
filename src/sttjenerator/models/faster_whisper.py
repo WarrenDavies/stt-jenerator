@@ -5,6 +5,7 @@ import gc
 
 from faster_whisper import WhisperModel
 from pydantic import BaseModel
+import numpy as np
 
 from basejenerator.generator_output import GeneratorOutput
 from basejenerator.artifacts.text_artifact import TextArtifact
@@ -58,7 +59,8 @@ class FasterWhisper(BaseSTTGenerator):
         """
         Initial inference run to create cache etc., mainly for benchmarking.
         """
-        pass
+        dummy_audio = np.zeros(16000, dtype=np.float32)
+        self.model.transcribe(dummy_audio)
 
 
     def generate(self) -> GeneratorOutput:

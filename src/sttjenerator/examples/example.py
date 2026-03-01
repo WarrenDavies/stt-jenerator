@@ -11,6 +11,8 @@ config = {
 
 stt_generator = registry.get_model_class(config)
 stt_generator.load()
+stt_generator.warmup()
+
 output = stt_generator.generate()
 for artifact in output.batch:
     print(
