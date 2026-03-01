@@ -12,7 +12,8 @@ packages = [
 requires-python = ">=3.11,<3.13"
 dependencies = [
     "faster-whisper (>=1.2.1,<2.0.0)",
-    "basejenerator @ file:///home/w/repos/base-jenerator"
+    "basejenerator @ file:///home/w/repos/base-jenerator",
+    "pydantic (>=2.12.5,<3.0.0)"
 ]
 
 
