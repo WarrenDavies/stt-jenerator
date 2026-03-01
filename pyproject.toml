@@ -1,0 +1,17 @@
+[project]
+name = "sttjenerator"
+version = "0.1.0"
+description = "It does STT."
+authors = [{ name = "Warren Davies"}]
+readme = "README.md"
+homepage = "https://github.com/WarrenDavies/stt-jenerator"
+repository = "https://github.com/WarrenDavies/stt-jenerator"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "faster-whisper (>=1.2.1,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
