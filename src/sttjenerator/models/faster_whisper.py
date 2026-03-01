@@ -18,7 +18,6 @@ from sttjenerator.core.base_stt_generator import BaseSTTGenerator
 class FasterWhisper(BaseSTTGenerator):
     """
     Concrete implementation of BaseSTTGenerator for faster whisper.
-
     """
 
     def __init__(self, config):
@@ -79,8 +78,19 @@ class FasterWhisper(BaseSTTGenerator):
             global_extras (Dict): Dictionary of any generation (i.e., not artifact specific) metadata
         """
         segments, info = self.model.transcribe(self.config["audio_np_or_file_path"], language="en")
-        for segment in segments:
-            print("[%.2fs -> %.2fs] %s" % (segment.start, segment.end, segment.text))
+        artifacts = [
+            TextArtifact(
+                data = segment.text,
+                item_extras = {
+                    "segment_start": segment.start,
+                    "segment_end": segment.end,
+                    "pos_in_batch": i
+                }
+            )
+            for i, segment in enumerate(segments)
+        ]
+
+        return GeneratorOutput(artifacts)
     
 
     def teardown(self):
