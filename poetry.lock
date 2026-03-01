@@ -92,6 +92,20 @@ files = [
 ]
 
 [[package]]
+name = "basejenerator"
+version = "0.1.0"
+description = "Abstract base class and return formats for AI Generator classes within the Jeneratorverse."
+optional = false
+python-versions = ">=3.10,<3.15"
+groups = ["main"]
+files = []
+develop = true
+
+[package.source]
+type = "directory"
+url = "../base-jenerator"
+
+[[package]]
 name = "certifi"
 version = "2026.2.25"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -887,4 +901,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<3.13"
-content-hash = "e85fad33894e3b43772dac752313303714bc86d836a49830e6542dfc79f08fe3"
+content-hash = "ea21765667f2e8c54b0dcc10a3c8135f2e39851cf53c23b0a9b72c8513c6e018"

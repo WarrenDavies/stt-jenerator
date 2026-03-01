@@ -23,6 +23,7 @@ def register_model(name):
     Returns:
         Callable: A decorator function that takes a class and registers it.
     """
+    print("here")
     def decorator(cls):
         MODEL_REGISTRY[name] = cls
         return cls
