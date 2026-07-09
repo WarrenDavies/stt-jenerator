@@ -1,17 +1,28 @@
 [project]
 name = "sttjenerator"
 version = "0.1.0"
-description = "It does STT."
+description = "It does Speech To Text."
 authors = [{ name = "Warren Davies"}]
 readme = "README.md"
-homepage = "https://github.com/WarrenDavies/stt-jenerator"
-repository = "https://github.com/WarrenDavies/stt-jenerator"
 requires-python = ">=3.11,<3.13"
 dependencies = [
-    "faster-whisper (>=1.2.1,<2.0.0)"
+    "faster-whisper>=1.2.1,<2.0.0",
+    "pydantic>=2.12.5,<3.0.0",
+    "basejenerator==0.1.0" 
+]
+
+
+[project.urls]
+homepage = "https://github.com/WarrenDavies/stt-jenerator"
+repository = "https://github.com/WarrenDavies/stt-jenerator"
+
+
+[tool.poetry]
+packages = [
+    { include = "sttjenerator", from = "src" }
 ]
 
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+build-backend = "poetry.core.masonry.api" 

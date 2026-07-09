@@ -3,13 +3,12 @@ import datetime
 import time
 import os
 import random
-import torch
+# import torch
 
 from basejenerator.base_generator import BaseGenerator
-from sttjenerator.config import config
 
 
-class BaseSTTGenerator(BaseClassRecord, ABC):
+class BaseSTTGenerator(BaseGenerator, ABC):
     """
     Abstract base class for STT.
 
@@ -17,7 +16,7 @@ class BaseSTTGenerator(BaseClassRecord, ABC):
         config (dict): Configuration dictionary containing model parameters, paths, and settings.
     """
 
-    def __init__(self, config = config):
+    def __init__(self, config):
         """
         Initializes the object with a config.
 
@@ -27,7 +26,6 @@ class BaseSTTGenerator(BaseClassRecord, ABC):
                 - 
         """
         self.config = config
-        self.generation_record = BaseClassRecord()
 
 
     def detect_device_and_dtype(self):
