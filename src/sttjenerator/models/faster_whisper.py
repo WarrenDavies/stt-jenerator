@@ -1,6 +1,6 @@
 import time
 import datetime 
-from typing import Tuple, List, Dict, Any, Literal
+from typing import Tuple, List, Dict, Any, Literal, Union
 import gc
 
 from faster_whisper import WhisperModel
@@ -153,11 +153,15 @@ class FasterWhisper(BaseSTTGenerator):
         Returns Pydantic class listing params that the model can accept
         """
         class ParamsSchema(BaseModel):
+            model_config = {
+                "arbitrary_types_allowed": True
+            }
+
             model_size: str = "medium"
             device: str = "cuda"
             compute_type: str = "float16"
 
-            audio: str = ""
+            audio: Union[str, bytes, np.ndarray]
             language: str = "en"
             beam_size: int = 5 # higher = more accurate but slower
             vad_filter: bool = True
