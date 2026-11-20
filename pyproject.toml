@@ -1,6 +1,6 @@
 [project]
 name = "sttjenerator"
-version = "0.1.0"
+version = "0.1.1"
 description = "It does Speech To Text."
 authors = [{ name = "Warren Davies"}]
 readme = "README.md"
