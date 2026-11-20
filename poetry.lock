@@ -105,17 +105,15 @@ files = [
 
 [[package]]
 name = "basejenerator"
-version = "0.1.0"
+version = "0.2.0"
 description = "Abstract base class and return formats for AI Generator classes within the Jeneratorverse."
 optional = false
-python-versions = ">=3.10,<3.15"
+python-versions = "<3.15,>=3.10"
 groups = ["main"]
-files = []
-develop = true
-
-[package.source]
-type = "directory"
-url = "../base-jenerator"
+files = [
+    {file = "basejenerator-0.2.0-py3-none-any.whl", hash = "sha256:dcb1591f3f4b4e5bd411095b23c1e7ec4b126b6cfe3c21351d36a22529cb1172"},
+    {file = "basejenerator-0.2.0.tar.gz", hash = "sha256:ccba785000812e61b185814fd116fecc5c59628e51bec94035f2284b07802e24"},
+]
 
 [[package]]
 name = "certifi"
@@ -1084,4 +1082,4 @@ typing-extensions = ">=4.12.0"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<3.13"
-content-hash = "eb5b74bbc1563757300cd28ef120e98c967e30740653b05e8f997e509f85b3c2"
+content-hash = "6a3dcb2c3286de3991c38d0e42cd1a2b7159cdfa18d56a49ce06e52cfef49d8e"
